@@ -13,28 +13,28 @@ pipeline{
 		stage('gitclone') {
 
 		      steps {
-		         git 'https://github.com/theitern/Dec6Class.git'
+		         git 'https://github.com/febfun1/Dec6Class.git'
 		      }
 		}
 		
 		stage('Build') {
 			steps {
 			
-			   sh 'docker build -t akinaregbesola/class_app:${BUILD_NUMBER} .'
+			   sh 'docker build -t febfun/class_app:${BUILD_NUMBER} .'
 			}
 		}
 		
 		stage('Login') {
 		
 			steps {
-			   sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login --username akinaregbesola --password-stdin'    
+			   sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login --username febfun --password-stdin'    
 			}
 		}
 
 		stage('Push') {
 			
 			steps {
-			   sh 'docker push akinaregbesola/class_app:${BUILD_NUMBER}'
+			   sh 'docker push febfun/class_app:${BUILD_NUMBER}'
 			}
 		}
 		}
