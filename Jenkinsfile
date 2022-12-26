@@ -13,7 +13,7 @@ pipeline{
 		stage('gitclone') {
 
 		      steps {
-		         git 'https://github.com/akinaregbesola/Dec6Class.git'
+		         git 'https://github.com/febfub1/Dec6Class.git'
 		      }
 		}
 		
